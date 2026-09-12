@@ -35,6 +35,9 @@ jobs:
       - name: Delete extra _layouts folder
         run: rm -rf ./dest/_layouts
 
+      - name: Move favicon.ico to root
+        run: mv photos/favicon.ico ./dest/favicon.ico
+
       - name: Copy photos to dest folder
         run: mv photos ./dest/photos
 
