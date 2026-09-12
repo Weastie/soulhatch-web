@@ -4,7 +4,7 @@
   "scripts": {
     "build": "pug src --out dest --pretty"
   },
-  "dependencies": {
-    "pug-cli": "^1.0.0"
+  "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
