@@ -33,7 +33,10 @@ jobs:
       - run: npm run build
 
       - name: Delete extra _layouts folder
-        run: rm -rtf ./dest/_layouts
+        run: rm -rf ./dest/_layouts
+
+      - name: Copy photos to dest folder
+        run: mv photos ./dest/photos
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
