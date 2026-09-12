@@ -32,6 +32,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Delete extra _layouts folder
+        run: rm -rtf ./dest/_layouts
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
