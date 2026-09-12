@@ -1,0 +1,58 @@
+extends _layouts/layout.pug
+
+block vars
+  - var pageTitle = "Soul Hatch - Home"
+  - 
+    var events = [
+      {
+        title: "Orpheus' Garden",
+        date: "Sep 19",
+        time: "8pm",
+        description: "Soul Hatch is playing alongside Rachel Folmar, James Judas, and Pachyderm",
+        image: "./photos/OrpheusGarden-flyer-2026.jpg"
+      },
+      {
+        title: "Punch Buggy Brewing",
+        date: "Oct 17",
+        time: "8pm",
+        description: "Soul Hatch will be boogy-ing all night long at Punch Buggy Brewing Co",
+        image: ""
+      }
+    ]
+
+block hero
+  .hero-banner
+    .container
+      h1 Soul Hatch
+      h2 One stop shop for all your cosmic-chaotic needs
+
+block content
+  .grid
+    div
+      article
+        h2 Upcoming Events
+        #events(style="margin-left: 20px")
+          each event in events
+            details(open)
+              summary [#{event.date}] #{event.title}
+              p= event.description
+              if event.image
+                img(src=event.image style="width: 75%")
+
+    div
+      article
+        h1 Sign up for our mailing list
+        form.listmonk-form(method="post" action="https://listmonk.soulhatch.band/subscription/form")
+          div
+            h3 Subscribe
+            input(type="hidden" name="nonce")
+            p
+              input(type="email" name="email" required placeholder="E-mail")
+            p
+              input(type="text" name="name" placeholder="Name (optional)")
+            p
+              input#531d2(type="checkbox" name="l" checked value="531d2448-8927-4046-ba12-bfa9cc874ba2")
+              label(for="531d2") Soul Hatch Events
+              br
+              span Sign up for Soul Hatch Mailing List
+            input(type="submit" value="Subscribe ")
