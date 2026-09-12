@@ -1,4 +1,6 @@
 dest
+photos/*~
+photos/.*
 
 # Logs
 logs
