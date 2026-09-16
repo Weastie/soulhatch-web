@@ -1,6 +1,8 @@
 dest
-photos/*~
-photos/.*
+public/*.html
+public/**.html
+public/photos/*~
+public/photos/.*
 
 # Logs
 logs
