@@ -2,7 +2,7 @@
   "name": "soulhatch-web",
   "version": "1.0.0",
   "scripts": {
-    "build": "pug src --out dest --pretty"
+    "build": "pug src --out public"
   },
   "devDependencies": {
     "pug-cli": "^1.0.0-alpha6"
