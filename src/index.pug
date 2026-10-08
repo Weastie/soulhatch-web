@@ -7,7 +7,7 @@ block vars
       {
         title: "Punch Buggy Brewing",
         date: "Oct 17",
-        time: "8pm",
+        time: "6-9pm",
         description: "",
         image: ""
       },
@@ -40,14 +40,14 @@ block content
         h2 Upcoming Events
         #events(style="margin-left: 20px")
           each event in events
-            details(open)
+            details
               summary [#{event.date}] #{event.title} #{event.time}
               if event.description && event.description.length > 0
                 p= event.description
+              else if event.image
+                img(src=event.image style="width: 75%")
               else
                 p(style="font-style: italic") No additional information is available for this event yet.
-              if event.image
-                img(src=event.image style="width: 75%")
 
     div
       article
