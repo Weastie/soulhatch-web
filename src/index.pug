@@ -42,7 +42,7 @@ block content
           each event in events
             details(open)
               summary [#{event.date}] #{event.title} #{event.time}
-              if event.description and event.description.length > 0
+              if event.description && event.description.length > 0
                 p= event.description
               else
                 p(style="font-style: italic") No additional information is available for this event yet.
