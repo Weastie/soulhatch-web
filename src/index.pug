@@ -22,7 +22,7 @@ block vars
         title: "DNS Fest",
         date: "Oct 31",
         time: "12-8pm",
-        description: "",
+        description: "Soul Hatch is playing at DNS Fest, time slot TBA",
         image: ""
       },
     ]
@@ -41,8 +41,11 @@ block content
         #events(style="margin-left: 20px")
           each event in events
             details(open)
-              summary [#{event.date}] #{event.title}
-              p= event.description
+              summary [#{event.date}] #{event.title} #{event.time}
+              if event.description and event.description.length > 0
+                p= event.description
+              else
+                p(style="font-style: italic") No additional information is available for this event yet.
               if event.image
                 img(src=event.image style="width: 75%")
 
